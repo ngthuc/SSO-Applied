@@ -23,10 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'http://sam.ctu.edu.vn/nckh/';
-$config['base_url'] = 'http://sam.ctu.edu.vn/TSV2017/';
-// $config['base_url'] = 'http://192.168.1.2/nckh/'; // Testing
-// $config['base_url'] = 'http://192.168.43.178/nckh/'; // Nghiemthu
+// $config['base_url'] = 'http://sam.ctu.edu.vn/nckh/'; // Example
+$config['base_url'] = 'http://localhost/sso/TSV2017-12/';
 
 /*
 |--------------------------------------------------------------------------
