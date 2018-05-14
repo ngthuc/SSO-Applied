@@ -1,0 +1,83 @@
+{
+  "monhoc": [{
+    "TEN_MON": "ComIS",
+    "PHONG": "101\/C1",
+    "THU": 4,
+    "TIET_BD": 3,
+    "SO_TIET": 3,
+    "NHOM": 2,
+    "DESC": "CT181 - Enterprise IS"
+  }, {
+    "TEN_MON": "PrjMng",
+    "PHONG": "203\/C1",
+    "THU": 3,
+    "TIET_BD": 3,
+    "SO_TIET": 3,
+    "NHOM": 1,
+    "DESC": "CT223 - Software Project Management"
+  }, {
+    "TEN_MON": "Struc",
+    "PHONG": "305\/D1",
+    "THU": "5",
+    "TIET_BD": "6",
+    "SO_TIET": "3",
+    "NHOM": "1",
+    "DESC": "CT242 - Software Structure"
+  }, {
+    "TEN_MON": "Test1",
+    "PHONG": "111\/C2",
+    "THU": "3",
+    "TIET_BD": "1",
+    "SO_TIET": "2",
+    "NHOM": "1",
+    "DESC": "CT243 - Software Testing"
+  }, {
+    "TEN_MON": "Test2",
+    "PHONG": "101\/C1",
+    "THU": "5",
+    "TIET_BD": "4",
+    "SO_TIET": "2",
+    "NHOM": "1",
+    "DESC": "CT243 - Software Testing"
+  }, {
+    "TEN_MON": ".NET",
+    "PHONG": "206\/KH",
+    "THU": "6",
+    "TIET_BD": "1",
+    "SO_TIET": "3",
+    "NHOM": "3",
+    "DESC": "CT246 - .NET"
+  }, {
+    "TEN_MON": "NLCS",
+    "PHONG": "N\/A",
+    "THU": 2,
+    "TIET_BD": 10,
+    "SO_TIET": 1,
+    "NHOM": 2,
+    "DESC": "CT239 - Not Schedule"
+  }, {
+    "TEN_MON": "SHCVHT",
+    "PHONG": "203\/TS",
+    "THU": "4",
+    "TIET_BD": "9",
+    "SO_TIET": "1",
+    "NHOM": "233",
+    "DESC": "Week 1 - 4 - 8 - 13"
+  }, {
+    "TEN_MON": "NLKTPM",
+    "PHONG": "N\/A",
+    "THU": "3",
+    "TIET_BD": "10",
+    "SO_TIET": "1",
+    "NHOM": "23",
+    "DESC": "CT250 - Not Schedule"
+  }, {
+    "TEN_MON": "Lu\u1eadn v\u0103n",
+    "PHONG": "N\/A",
+    "THU": "4",
+    "TIET_BD": "10",
+    "SO_TIET": "1",
+    "NHOM": "9",
+    "DESC": "CT594 - Not Schedule"
+  }]
+}
