@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
-| DATABASE CONNECTIVITY SETTINGS
+| DATABASE CONNECTIVITY SETTINGS 
 | -------------------------------------------------------------------
 | This file will contain the settings needed to access your database.
 |
@@ -77,7 +77,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'mysql',
 	'database' => 'nckh',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
