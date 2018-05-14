@@ -1,0 +1,40 @@
+.logo-ctu {
+  width: 55px;
+  height: 44px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .search {
+      padding-top: 145px;
+      padding-bottom: 145px;
+    }
+}
+
+#list-wrpaaer{
+		border-left: 5px solid #5BC0DE;
+	  	background-color: rgba(238, 238, 238, 0.37);
+	}
+	#marquee-vertical{
+		padding: 15px;
+		list-style-type: none;
+	}
+	#marquee-vertical li{
+		border-bottom: 1px solid #ddd;
+	}
+	#marquee-vertical li a{
+		text-decoration: none;
+	}
+	#marquee-vertical li a h4{
+		margin-bottom: 5px;
+	}
+	#marquee-vertical li span{
+		color: #919191;
+	}
+	.label{
+	  font-weight: 400;
+	}
+
+.section-header a {
+  color:white;
+}
