@@ -1,7 +1,7 @@
 <?php
 	$host = "localhost";
 	$user = "root";
-	$pass = "mysql";
+	$pass = "";
 	$database = "shophtx2";
 	global $conn;
 	$conn = mysqli_connect($host, $user, $pass, $database) or die ("Could not connect: " . mysqli_error());
