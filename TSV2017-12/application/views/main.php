@@ -1,6 +1,7 @@
 <?php
 // Check login
 $loginStatus = $this->session->userdata('user');
+$user = $loginStatus['username'];
 
 // Check role
 $sessRole = $this->session->userdata('access');
@@ -105,7 +106,15 @@ $fetchRole = explode(',',$_role);
           }
 
           if($loginStatus) {
-            echo '<li><a href="'.base_url('auth/logout/?next='.$_SERVER['REQUEST_URI']).'">Đăng xuất</a></li>';
+            echo '<li class="dropdown">
+              <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                Hi, '.$user.'!<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Tài khoản</a></li>
+                <li><a href="'.base_url('auth/logout/?next='.$_SERVER['REQUEST_URI']).'">Đăng xuất</a></li>
+              </ul>
+            </li>';
           } else {
             echo '<li><a href="#" data-toggle="modal" data-target="#loginform">Đăng nhập</a></li>';
           }
