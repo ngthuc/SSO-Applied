@@ -14,14 +14,12 @@ class Auth extends CI_Controller {
         $this->_data['url'] = base_url();
 		}
 
-		public function index($dir = null, $goback = null, $param1 = null, $param2 = null, $param3 = null)
+		public function index()
 		{
         $this->_data['subview'] = 'alert/load_alert_view';
         $this->_data['titlePage'] = 'Xác thực';
         $this->_data['type'] = 'warning';
-        if ($dir && $goback) {
-          $this->_data['url'] = base_url($goback.'/'.$param1.'/'.$param2.'/'.$param3);
-        } else $this->_data['url'] = base_url();
+        $this->_data['url'] = base_url();
         $this->_data['content'] = 'Access Denied';
         $this->load->view('main.php', $this->_data);
 		}
