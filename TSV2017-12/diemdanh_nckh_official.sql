@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2018 at 09:33 AM
+-- Generation Time: May 14, 2018 at 12:45 PM
 -- Server version: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(5) NOT NULL,
   `username` char(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` char(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password` char(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` char(75) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` char(128) COLLATE utf8_unicode_ci DEFAULT NULL,
   `rolename` char(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'user'
