@@ -23,9 +23,12 @@
         <label for="role">Quyền hạn</label>
         <select class="form-control" name="role">
           <?php $role = $this->Mrole->getList();
-          echo '<option value="'.$content['rolename'].'">'.$content['rolename'].'</option>';
           foreach ($role as $key => $row) {
+            if($row['roleName'] == $content['rolename']) {
+              echo '<option value="'.$row['roleName'].'" selected>'.$row['roleName'].'</option>';
+            } else {
               echo '<option value="'.$row['roleName'].'">'.$row['roleName'].'</option>';
+            }
           } ?>
         </select>
         <button type="submit" name="change_role" class="btn btn-primary">Lưu thay đổi</button>

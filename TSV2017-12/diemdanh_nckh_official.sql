@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2018 at 02:36 AM
+-- Generation Time: May 14, 2018 at 09:33 AM
 -- Server version: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -331,18 +331,19 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `roleName` varchar(255) NOT NULL,
   `rolesGroup` longtext NOT NULL,
   `roleDesc` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`idRole`, `roleName`, `rolesGroup`, `roleDesc`) VALUES
-(1, 'Owner', 'admin,report,newEvent,event,attendance,organization,identification,role,account,remove,device', 'Tất cả quyền'),
-(2, 'Admin', 'admin,report,newEvent,event,attendance,organization,identification,role,account,remove,device', 'Tất cả quyền (trừ quyền cài đặt và quản lý nhóm quyền)'),
-(3, 'User', '', 'Chỉ nhóm quyền xem và không truy cập AdminCP'),
-(4, 'Manager', '', 'Nhóm quyền xem, quyền quản lý cơ bản'),
-(6, 'Deny', '', 'Bị cấm toàn hệ thống');
+(1, 'owner', 'admin,report,newEvent,event,attendance,organization,identification,role,account,remove,device', 'Tất cả quyền'),
+(2, 'admin', 'admin,report,newEvent,event,attendance,organization,identification,role,account,remove,device', 'Tất cả quyền (trừ quyền cài đặt và quản lý nhóm quyền)'),
+(3, 'user', '', 'Chỉ nhóm quyền xem và không truy cập AdminCP'),
+(4, 'manager', '', 'Nhóm quyền xem, quyền quản lý cơ bản'),
+(6, 'deny', '', 'Bị cấm toàn hệ thống'),
+(7, 'sso_default', 'admin,report,newEvent', 'Nhóm quyền mặc định cho người dùng truy cập bằng dịch vụ Single Sign-On');
 
 -- --------------------------------------------------------
 
@@ -552,7 +553,7 @@ ALTER TABLE `rfid`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `idRole` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `idRole` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `staff`
 --
