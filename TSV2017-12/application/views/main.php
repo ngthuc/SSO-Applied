@@ -111,7 +111,7 @@ $fetchRole = explode(',',$_role);
                 Hi, '.$user.'!<span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#">Tài khoản</a></li>
+                <li><a href="'.base_url('index/profile/'.$user).'">Tài khoản</a></li>
                 <li><a href="'.base_url('auth/logout/?next='.$_SERVER['REQUEST_URI']).'">Đăng xuất</a></li>
               </ul>
             </li>';
