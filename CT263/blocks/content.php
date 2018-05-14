@@ -27,6 +27,16 @@
                     require "main_products.php";
                     break;
                 }
+            case "sso":
+                if(!isset($_SESSION['username']) ){
+                    require "left/left-content.php";
+                    require "right/callback.php";
+                    break;
+                } else{
+                    require "banner.php";
+                    require "main_products.php";
+                    break;
+                }
             case "createAccount":
                 if( !isset($_SESSION['username']) ){
                     require "left/left-content.php";
