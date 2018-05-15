@@ -30,7 +30,7 @@
           var webAuth = new auth0.WebAuth({
              domain: 'tuyetnghi96.auth0.com',
              clientID: 'f8VIaKqvS2rzGXw0kbrn2uSm9gkH6MpE',
-             redirectUri: 'http://localhost/sso/TimeTable-TKB/callback.php',
+             redirectUri: 'http://localhost/sso/TimeTable-TKB/callback_sso',
              audience: `https://tuyetnghi96.auth0.com/userinfo`,
              responseType: 'code',
              scope: 'openid profile'

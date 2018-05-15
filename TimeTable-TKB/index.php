@@ -24,11 +24,11 @@ if ($user)
     include 'view/main.php';
   }
 }
-// else if (isset($_GET['app'])) {
-//     if ($_GET['app'] == 'callback_sso') {
-//       include 'callback.php';
-//     }
-// }
+else if (isset($_GET['app'])) {
+    if ($_GET['app'] == 'callback_sso') {
+      include 'callback.php';
+    }
+}
 else {
   // default page
   include 'view/main.php';
