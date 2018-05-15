@@ -1,8 +1,0 @@
-{
-  "site": [{
-    "id": "1",
-    "title": "admin",
-    "protocol": "http",
-    "url": "://127.0.0.1/tkb/"
-  }]
-}
