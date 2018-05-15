@@ -5,6 +5,28 @@ session_start();
 <head>
  <title>Demo Shopping Cart - Created By My Kenny</title>
  <link rel="stylesheet" href="style.css" />
+
+ <!-- Auth0 -->
+ <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
+
+ <!-- Initializing Script -->
+ <script>
+     $(document).ready(function() {
+      var webAuth = new auth0.WebAuth({
+         domain: 'tuyetnghi96.auth0.com',
+         clientID: '7Hr6oFjh6XJa4nkesvi3sbXclnXkIKjd',
+         redirectUri: 'http://localhost/sso/SSO_Lib_and_Callback/callback.php',
+         audience: `https://tuyetnghi96.auth0.com/userinfo`,
+         responseType: 'code',
+         scope: 'openid profile'
+       });
+
+       $('#login').click(function(e) {
+         e.preventDefault();
+         webAuth.authorize();
+       });
+     });
+ </script>
 </head>
 <body>
 <h1>Demo Shopping Cart</h1>
