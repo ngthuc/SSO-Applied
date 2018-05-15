@@ -12,14 +12,35 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="public/main.js"></script>
     <script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		ga('create', '<?php echo $dbuser['analytics']; ?>', 'auto');
-		ga('send', 'pageview');
+  		ga('create', '<?php echo $dbuser['analytics']; ?>', 'auto');
+  		ga('send', 'pageview');
+	   </script>
 
-	</script>
+     <!-- Auth0 -->
+     <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
+
+     <!-- Initializing Script -->
+     <script>
+         $(document).ready(function() {
+          var webAuth = new auth0.WebAuth({
+             domain: 'tuyetnghi96.auth0.com',
+             clientID: 'f8VIaKqvS2rzGXw0kbrn2uSm9gkH6MpE',
+             redirectUri: 'http://localhost/sso/TimeTable-TKB/callback.php',
+             audience: `https://tuyetnghi96.auth0.com/userinfo`,
+             responseType: 'code',
+             scope: 'openid profile'
+           });
+
+           $('#login').click(function(e) {
+             e.preventDefault();
+             webAuth.authorize();
+           });
+         });
+     </script>
   </head>
 <body>

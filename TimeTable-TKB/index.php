@@ -23,7 +23,13 @@ if ($user)
     // default page
     include 'view/main.php';
   }
-} else {
+}
+// else if (isset($_GET['app'])) {
+//     if ($_GET['app'] == 'callback_sso') {
+//       include 'callback.php';
+//     }
+// }
+else {
   // default page
   include 'view/main.php';
 }

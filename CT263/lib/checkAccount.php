@@ -41,6 +41,9 @@
 
     if( isset($_GET['logout']) ){
         if($_SESSION['username']){
+            if(isset($_SESSION['isSSO'])){
+                unset($_SESSION['isSSO']);
+            }
             unset($_SESSION['username']);
             header("location:index.php");
         }else{

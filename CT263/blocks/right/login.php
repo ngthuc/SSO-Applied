@@ -27,8 +27,13 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <button id="login" class="bt-form">Signin with Auth0</button>
                         <input type="submit" name="btLogin" id="btLogin" value="Login" class="bt-form"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <hr>
+                        <button id="login" class="bt-form">Signin with Auth0</button>
                     </td>
                 </tr>
             </table>

@@ -8,9 +8,12 @@ if (!$userInfo) {
     die("Error while logging you in. Please retry");
 }
 else {
-    var_dump($userInfo);
+    // foreach ($userInfo as $key=>$info) {
+    // 	$data[] = $info;
+    // }
+    $_SESSION['username'] = $userInfo['nickname'];
+    $_SESSION['isSSO'] = TRUE;
+    $_SESSION['role'] = "Customer";
+    // header("location:index.php");
+    echo '<meta http-equiv="refresh" content="0,url=index.php">';
 }
-
-// foreach ($userInfo as $key=>$data) {
-	// echo $data . "<br />";
-// }

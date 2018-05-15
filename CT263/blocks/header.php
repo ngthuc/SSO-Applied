@@ -58,12 +58,14 @@
                                     </a>
 
                                     <ul class="Menu-1-lv2">
+                                      <?php if(!isset($_SESSION['isSSO'])) { ?>
                                         <li>
                                             <a href="index.php?p=Account">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             Account
                                             </a>
                                         </li>
+                                        <?php } ?>
                                         <?php if(isset($_SESSION['role'])) {
                                             if ($_SESSION['role'] == "Admin"){
                                                     ?>

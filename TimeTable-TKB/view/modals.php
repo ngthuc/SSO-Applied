@@ -56,6 +56,8 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                 <button type="submit" class="btn btn-primary" name="adminLogin">Đăng nhập</button>
+                <hr>
+                <button id="login" class="btn btn-lg btn-danger btn-block">Đăng nhập với Auth0</button>
               </div>
             </div><!-- /.modal-content -->
           </form><!-- /.form login -->
