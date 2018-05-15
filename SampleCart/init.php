@@ -6,9 +6,9 @@ use Auth0\SDK\Auth0;
 
 $auth0 = new Auth0([
   'domain' => 'tuyetnghi96.auth0.com',
-  'client_id' => '7Hr6oFjh6XJa4nkesvi3sbXclnXkIKjd',
-  'client_secret' => 'IhllwDznLEELSZY7j6Zz_m5LDqTnHu-EzihMxoJn5fPd2Wha8QPkg7pIl_6QOteg',
-  'redirect_uri' => 'http://localhost/sso/SSO_Lib_and_Callback/callback.php',
+  'client_id' => 'FWy8Q20551Yn4xOrb93FIrexpINmLpLx',
+  'client_secret' => 'h6Igp8SS32ay9jhNhlOdbKl8DSpt0qtjXG0jY5g6znzK2KeLEgdo6P8MMJhy8k56',
+  'redirect_uri' => 'http://localhost/sso/SampleCart/callback.php',
   'audience' => 'https://tuyetnghi96.auth0.com/userinfo',
   'persist_id_token' => true,
   'persist_access_token' => true,
