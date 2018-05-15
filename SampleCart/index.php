@@ -76,8 +76,8 @@ session_start();
         echo '<p>Ban khong co mon hang nao trong gio hang</p>';
       } else {
         $items = $_SESSION['cart'];
-        echo '<p>Ban dang co <a href="cart.php">'.count($items).' mon hang trong gio hang</a></p>';
-       }
+        echo '<p>Ban dang co <a href="cart.php" class="a-style">'.count($items).' mon hang trong gio hang</a></p>';
+      }
     ?>
     </div>
     <?php
@@ -89,7 +89,7 @@ session_start();
           echo "<div class=pro>";
           echo "<h3>$row[title]</h3>";
           echo "Tac Gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";
-          echo "<p align='right'><a href='addcart.php?item=$row[id]'>Mua Sach Nay</a></p>";
+          echo "<p align='right'><a href='addcart.php?item=$row[id]' class='a-style'>Mua Sach Nay</a></p>";
           echo "</div>";
         }
       }
