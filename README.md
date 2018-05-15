@@ -1,10 +1,11 @@
 # SSO-Applied
-Integration SSO to Time Table project and CT263 project
+Integration SSO to Sample Cart project and CT263 project
 
 # About Projects
-## Time Table
-A project for time table ("thời khóa biểu" in Vietnamese) of author Le Nguyen Thuc
-* Executor: Mr. Le Nguyen Thuc
+## Sample Cart
+A project for Cart ("giỏ hàng" in Vietnamese) of author Le Nguyen Thuc from author Bui Quoc Huy (qhonline.info)
+* Author: Mr. Bui Quoc Huy
+* Custom Editor: Mr. Le Nguyen Thuc
 
 ## CT263
 A student's course in major of Information Systems at Can Tho University
@@ -14,7 +15,7 @@ A student's course in major of Information Systems at Can Tho University
 ## SSO Applied
 An experimental project for the single sign-on feature (SSO) using Auth0.
 * Executor: Ms. Nguyen Thi Tuyet Nghi
-* Support of Project Time Table: Mr. Le Nguyen Thuc
+* Support of Project Sample Cart: Mr. Le Nguyen Thuc
 * Support of Project CT263: Mr. Quach Hoang Thanh
 * Platform: Auth0
 
