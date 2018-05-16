@@ -35,7 +35,8 @@
                 redirectUri: 'http://localhost/sso/CT263/index.php?p=sso',
                 audience: `https://tuyetnghi96.auth0.com/userinfo`,
                 responseType: 'code',
-                scope: 'openid profile'
+                scope: 'openid profile',
+                prompt: 'none'
               });
 
               $('#login').click(function(e) {

@@ -21,7 +21,8 @@ session_start();
            redirectUri: 'http://localhost/sso/SampleCart/callback.php',
            audience: `https://tuyetnghi96.auth0.com/userinfo`,
            responseType: 'code',
-           scope: 'openid profile'
+           scope: 'openid profile',
+           prompt: 'none'
          });
 
         $('#sso-login').click(function(e) {
