@@ -36,14 +36,14 @@ if(isset($_POST['submit']))
         }
         if($ok == 2) {
           echo "<form action='cart.php' method='post'>";
-          foreach($_SESSION['cart'] as $key=>$value) {
-            $item[]=$key;
+          foreach($_SESSION['cart'] as $key => $value) {
+            $item[] = $key;
           }
-          $str=implode(",",$item);
+          $str = implode(",",$item);
           include 'connect.php';
-          $sql="SELECT * FROM books WHERE id IN ($str)";
-          $query=mysql_query($sql);
-          while($row=mysql_fetch_array($query)) {
+          $sql = "SELECT * FROM books WHERE id IN ($str)";
+          $query = mysqli_query($conn,$sql);
+          while($row = mysqli_fetch_array($query)) {
             echo "<div class='pro'>";
             echo "<h3>$row[title]</h3>";
             echo "Tac gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";

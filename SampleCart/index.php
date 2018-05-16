@@ -42,7 +42,7 @@ if(isset($_COOKIE['userid'])) {
     <h1>Demo Shopping Cart</h1>
     <div id='cart'>
       <?php
-        if($_SESSION['user'] != '') {
+        if(isset($_SESSION['user'])) {
           echo 'Xin chào, <b style="color: red">' . $_SESSION['user'] . '!</b>';
           echo '<a href="logout.php" style="color: blue"> Đăng xuất</a>';
         } else {
@@ -89,9 +89,9 @@ if(isset($_COOKIE['userid'])) {
     <?php
       include 'connect.php';
       $sql = "SELECT * FROM books ORDER BY id DESC";
-      $query = mysql_query($sql);
-      if(mysql_num_rows($query) > 0) {
-        while($row = mysql_fetch_array($query)) {
+      $query = mysqli_query($conn,$sql);
+      if(mysqli_num_rows($query) > 0) {
+        while($row = mysqli_fetch_array($query)) {
           echo "<div class=pro>";
           echo "<h3>$row[title]</h3>";
           echo "Tac Gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";
