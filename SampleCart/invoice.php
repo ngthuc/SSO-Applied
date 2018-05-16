@@ -33,6 +33,8 @@ if(isset($_POST['submit'])) {
           }
         }
         if($ok == 2) {
+          $total = 0;
+
           echo "<form action='invoice.php' method='post'>";
 
           echo "<div class='pro' align='center'>";

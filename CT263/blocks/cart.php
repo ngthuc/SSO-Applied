@@ -19,6 +19,7 @@
                         </tr>
             <?php
             $ok=1;
+            $item = null;
             if(isset($_SESSION['cart'])) {
              foreach($_SESSION['cart'] as $k => $v) {
               if(isset($k)) {
@@ -41,7 +42,7 @@
       </tr>
       <tr>
         <td>
-          
+
           <input type="submit" name="btUpdateCart" id="btUpdateCart" value="Update Cart"/>
         </td>
       </tr>

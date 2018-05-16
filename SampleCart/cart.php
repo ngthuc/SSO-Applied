@@ -35,6 +35,7 @@ if(isset($_POST['submit']))
           }
         }
         if($ok == 2) {
+          $total = 0;
           echo "<form action='cart.php' method='post'>";
           foreach($_SESSION['cart'] as $key => $value) {
             $item[] = $key;
