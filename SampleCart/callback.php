@@ -9,7 +9,11 @@ if (!$userInfo) {
 }
 else {
     // var_dump($userInfo);
-    $_SESSION['user'] = $userInfo['nickname'];
+    // $_SESSION['user'] = $userInfo['nickname'];
+    $cookie_name = "userid";
+    $cookie_value = $userInfo['nickname'];
+    setcookie($cookie_name, $cookie_value, time() + 3600);
+    // var_dump($_COOKIE[$cookie_name]);
     echo '<script>alert("Đăng nhập thành công!")</script>';
     echo '<meta http-equiv="refresh" content="0,url=index.php">';
 }

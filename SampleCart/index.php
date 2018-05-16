@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(isset($_COOKIE['userid'])) {
+  $_SESSION['username'] = $_COOKIE['userid'];
+  // echo '<meta http-equiv="refresh" content="0,url=index.php">';
+}
 ?>
 <html>
   <head>
