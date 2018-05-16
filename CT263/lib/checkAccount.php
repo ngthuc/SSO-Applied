@@ -44,8 +44,8 @@
             if(isset($_SESSION['isSSO'])){
                 unset($_SESSION['isSSO']);
             }
-            if(isset($_COOKIE['username'])){
-                setcookie("username", "", time()-3600);
+            if(isset($_COOKIE['userid'])){
+                setcookie("userid", "", time()-3600);
             }
             unset($_SESSION['username']);
             header("location:index.php");

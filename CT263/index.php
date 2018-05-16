@@ -1,11 +1,11 @@
 <?php session_start();
 
-// if(isset($_COOKIE['userid'])) {
-//   $_SESSION['username'] = $_COOKIE['userid'];
-//   $_SESSION['isSSO'] = TRUE;
-//   $_SESSION['role'] = "Customer";
-//   // echo '<meta http-equiv="refresh" content="0,url=index.php">';
-// }
+if(isset($_COOKIE['userid'])) {
+  $_SESSION['username'] = $_COOKIE['userid'];
+  $_SESSION['isSSO'] = TRUE;
+  $_SESSION['role'] = "Customer";
+  // echo '<meta http-equiv="refresh" content="0,url=index.php">';
+}
 ?>
 <?php
     require "lib/dbCon.php";

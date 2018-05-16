@@ -1,8 +1,9 @@
 <?php
 session_start();
 
+// $_SESSION['user'] = null;
 if(isset($_COOKIE['userid'])) {
-  $_SESSION['username'] = $_COOKIE['userid'];
+  $_SESSION['user'] = $_COOKIE['userid'];
   // echo '<meta http-equiv="refresh" content="0,url=index.php">';
 }
 ?>
