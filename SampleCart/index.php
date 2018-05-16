@@ -90,15 +90,15 @@ if(isset($_COOKIE['userid'])) {
       include 'connect.php';
       $sql = "SELECT * FROM books ORDER BY id DESC";
       $query = mysqli_query($conn,$sql);
-      if(mysqli_num_rows($query) > 0) {
+      // if(mysqli_num_rows($query) > 0) {
         while($row = mysqli_fetch_array($query)) {
-          echo "<div class=pro>";
-          echo "<h3>$row[title]</h3>";
-          echo "Tac Gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";
-          echo "<p align='right'><a href='addcart.php?item=$row[id]' class='a-style'>Mua Sach Nay</a></p>";
+          echo "<div class='pro'>";
+          echo "<h3>".$row['title']."</h3>";
+          echo "Tac Gia: ".$row['author']." - Gia: ".number_format($row['price'],3)." VND<br />";
+          echo "<p align='right'><a href='addcart.php?item=".$row['id']."' class='a-style'>Mua Sach Nay</a></p>";
           echo "</div>";
         }
-      }
+      // }
     ?>
     </center>
   </body>

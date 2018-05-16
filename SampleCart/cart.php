@@ -39,20 +39,34 @@ if(isset($_POST['submit']))
           foreach($_SESSION['cart'] as $key => $value) {
             $item[] = $key;
           }
-          $str = implode(",",$item);
+          // $str = implode(",",$item);
           include 'connect.php';
-          $sql = "SELECT * FROM books WHERE id IN ($str)";
-          $query = mysqli_query($conn,$sql);
-          while($row = mysqli_fetch_array($query)) {
-            echo "<div class='pro'>";
-            echo "<h3>$row[title]</h3>";
-            echo "Tac gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";
-            echo "<p align='right'>So Luong: <input type='number' name='qty[$row[id]]' size='5' value='{$_SESSION['cart'][$row[id]]}'> - ";
-            echo "<a href='delcart.php?productid=$row[id]' class='a-style'>Xoa Sach Nay</a></p>";
-            echo "<p align='right'> Gia tien cho mon hang: ". number_format($_SESSION['cart'][$row[id]]*$row[price],3) ." VND</p>";
-            echo "</div>";
-            $total+=$_SESSION['cart'][$row[id]]*$row[price];
+          foreach ($item as $key => $value) {
+            $sql = "SELECT * FROM books WHERE id='$value'";
+            $query = mysqli_query($conn,$sql);
+            while($row = mysqli_fetch_array($query)) {
+              echo "<div class='pro'>";
+              echo "<h3>$row[title]</h3>";
+              echo "Tac gia: $row[author] - Gia: ".number_format($row['price'],3)." VND<br />";
+              echo "<p align='right'>So Luong: <input type='number' name='qty[$row[id]]' size='5' value='{$_SESSION['cart'][$row['id']]}'> - ";
+              echo "<a href='delcart.php?productid=$row[id]' class='a-style'>Xoa Sach Nay</a></p>";
+              echo "<p align='right'> Gia tien cho mon hang: ". number_format($_SESSION['cart'][$row['id']]*$row['price'],3) ." VND</p>";
+              echo "</div>";
+              $total+=$_SESSION['cart'][$row['id']]*$row['price'];
+            }
           }
+          // $sql = "SELECT * FROM books WHERE id IN ($str)";
+          // $query = mysqli_query($conn,$sql);
+          // while($row = mysqli_fetch_array($query)) {
+          //   echo "<div class='pro'>";
+          //   echo "<h3>$row[title]</h3>";
+          //   echo "Tac gia: $row[author] - Gia: ".number_format($row[price],3)." VND<br />";
+          //   echo "<p align='right'>So Luong: <input type='number' name='qty[$row[id]]' size='5' value='{$_SESSION['cart'][$row[id]]}'> - ";
+          //   echo "<a href='delcart.php?productid=$row[id]' class='a-style'>Xoa Sach Nay</a></p>";
+          //   echo "<p align='right'> Gia tien cho mon hang: ". number_format($_SESSION['cart'][$row[id]]*$row[price],3) ." VND</p>";
+          //   echo "</div>";
+          //   $total+=$_SESSION['cart'][$row[id]]*$row[price];
+          // }
           echo "<div class='pro' align='right'>";
           echo "<b>Tong tien cho cac mon hang: <font color='red'>". number_format($total,3)." VND</font></b>";
           echo "</div>";

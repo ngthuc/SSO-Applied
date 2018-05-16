@@ -6,7 +6,7 @@ if(!isset($_SESSION['user']) && !isset($_SESSION['invoice'])) {
   echo '<meta http-equiv="refresh" content="0,url=index.php">';
 }
 
-echo '<meta http-equiv="refresh" content="5,url=index.php">';
+echo '<meta http-equiv="refresh" content="3,url=index.php">';
 ?>
 <html>
   <head>
@@ -25,6 +25,7 @@ echo '<meta http-equiv="refresh" content="5,url=index.php">';
         echo "Ma so don hang la <b>".$_SESSION['invoice']."</b>";
         echo "</div>";
       ?>
+      <a href="index.php">Cho trong 3s hoac click de quay ve trang chu</a>
     </center>
   </body>
 </html>
