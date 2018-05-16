@@ -52,10 +52,10 @@
                 require "right/Account.php";
                 break;
             case "Cart":
-                if( isset($_SESSION['username']) ){
+                if( isset($_SESSION['username']) ) {
                     require "cart.php";
                     break;
-                }else{
+                } else {
                     require "left/left-content.php";
                     require "right/login.php";
                     break;

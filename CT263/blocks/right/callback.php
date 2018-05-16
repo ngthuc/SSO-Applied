@@ -11,9 +11,12 @@ else {
     // foreach ($userInfo as $key=>$info) {
     // 	$data[] = $info;
     // }
+    // $cookie_name = "userid";
+    // $cookie_value = $userInfo['nickname'];
+    // setcookie($cookie_name, $cookie_value, time() + 3600);
+    // var_dump($_COOKIE[$cookie_name]);
     $_SESSION['username'] = $userInfo['nickname'];
     $_SESSION['isSSO'] = TRUE;
     $_SESSION['role'] = "Customer";
-    // header("location:index.php");
-    echo '<meta http-equiv="refresh" content="0,url=index.php">';
+    // echo '<meta http-equiv="refresh" content="0,url=index.php">';
 }

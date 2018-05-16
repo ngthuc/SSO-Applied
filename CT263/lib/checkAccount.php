@@ -39,14 +39,17 @@
         }
     }
 
-    if( isset($_GET['logout']) ){
+    if(isset($_GET['logout']) ){
         if($_SESSION['username']){
             if(isset($_SESSION['isSSO'])){
                 unset($_SESSION['isSSO']);
             }
+            if(isset($_COOKIE['username'])){
+                setcookie("username", "", time()-3600);
+            }
             unset($_SESSION['username']);
             header("location:index.php");
-        }else{
+        } else{
             header("location:index.php");
         }
     }

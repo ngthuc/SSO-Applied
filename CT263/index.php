@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php session_start();
+
+// if(isset($_COOKIE['userid'])) {
+//   $_SESSION['username'] = $_COOKIE['userid'];
+//   $_SESSION['isSSO'] = TRUE;
+//   $_SESSION['role'] = "Customer";
+//   // echo '<meta http-equiv="refresh" content="0,url=index.php">';
+// }
+?>
 <?php
     require "lib/dbCon.php";
     require "lib/dbHomePage.php";
@@ -35,8 +43,7 @@
                 redirectUri: 'http://localhost/sso/CT263/index.php?p=sso',
                 audience: `https://tuyetnghi96.auth0.com/userinfo`,
                 responseType: 'code',
-                scope: 'openid profile',
-                prompt: 'none'
+                scope: 'openid profile'
               });
 
               $('#login').click(function(e) {
