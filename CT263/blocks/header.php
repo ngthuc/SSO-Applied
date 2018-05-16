@@ -102,7 +102,7 @@
                         <td width="50%">
                             <!--logo-->
                             <div class="Logo">
-                                <a href="#">
+                                <a href="index.php">
                                     <img src="images/sc-lionicon-dribbble-2016.png" />
                                     <p>HTX Store</p>
                                 </a>
