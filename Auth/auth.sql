@@ -4,7 +4,3 @@ CREATE TABLE `auth` (
   `token` varchar(100) NULL,
   PRIMARY KEY  (`id`)
 );
-
-INSERT INTO `books` VALUES (1, 'admin', 'Kenny');
-INSERT INTO `books` VALUES (2, 'user', 'Kenny');
-INSERT INTO `books` VALUES (3, 'manager', 'Kenny');

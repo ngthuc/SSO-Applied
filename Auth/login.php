@@ -1,9 +1,3 @@
-<?php
-// Kiem tra su ton tai cua trang dich
-if(isset($_GET['next'])) {
-  echo '<a href="'.$_GET['next'].'" target="_blank">'.$_GET['next'].'</a>';
-}
-?>
 <!DOCTYPE html>
 <html lang="vi" dir="ltr">
   <head>
@@ -17,18 +11,18 @@ if(isset($_GET['next'])) {
 
     <!-- Initializing Script -->
     <script>
-      // $(document).ready(function() {
-      //   var webAuth = new auth0.WebAuth({
-      //       domain: 'tuyetnghi96.auth0.com',
-      //       clientID: 'PBFfXd64gcJFT5kZQaBgJ4unGnSAB6oi',
-      //       redirectUri: 'http://localhost/sso/Auth/callback.php',
-      //       audience: `https://tuyetnghi96.auth0.com/userinfo`,
-      //       responseType: 'code',
-      //       scope: 'openid profile'
-      //   });
-      //
-      //   webAuth.authorize();
-      // });
+      $(document).ready(function() {
+        var webAuth = new auth0.WebAuth({
+            domain: 'tuyetnghi96.auth0.com',
+            clientID: 'PBFfXd64gcJFT5kZQaBgJ4unGnSAB6oi',
+            redirectUri: 'http://localhost/sso/Auth/callback.php',
+            audience: `https://tuyetnghi96.auth0.com/userinfo`,
+            responseType: 'code',
+            scope: 'openid profile'
+        });
+
+        webAuth.authorize();
+      });
     </script>
   </head>
   <body>

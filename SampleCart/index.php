@@ -1,11 +1,5 @@
 <?php
 session_start();
-
-// $_SESSION['user'] = null;
-if(isset($_COOKIE['userid'])) {
-  $_SESSION['user'] = $_COOKIE['userid'];
-  // echo '<meta http-equiv="refresh" content="0,url=index.php">';
-}
 ?>
 <html>
   <head>
@@ -15,26 +9,43 @@ if(isset($_COOKIE['userid'])) {
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+    <!-- Single Sign-on -->
+    <script src="http://localhost/sso/Auth/main.js"></script>
+
     <!-- Auth0 -->
-    <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
+    <!-- <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script> -->
 
     <!-- Initializing Script -->
     <script>
-       $(document).ready(function() {
-        var webAuth = new auth0.WebAuth({
-           domain: 'tuyetnghi96.auth0.com',
-           clientID: 'FWy8Q20551Yn4xOrb93FIrexpINmLpLx',
-           redirectUri: 'http://localhost/sso/SampleCart/callback.php',
-           audience: `https://tuyetnghi96.auth0.com/userinfo`,
-           responseType: 'code',
-           scope: 'openid profile'
-         });
+       // Hàm thiết lập Cookie
+       function setCookie(cname, cvalue, exdays) {
+         var d = new Date();
+         d.setTime(d.getTime() + (exdays*24*60*60*1000));
+         var expires = "expires="+d.toUTCString();
+         document.cookie = cname + "=" + cvalue + "; " + expires;
+       }
+       // $(document).ready(function() {
+       //  var webAuth = new auth0.WebAuth({
+       //     domain: 'tuyetnghi96.auth0.com',
+       //     clientID: 'FWy8Q20551Yn4xOrb93FIrexpINmLpLx',
+       //     redirectUri: 'http://localhost/sso/SampleCart/callback.php',
+       //     audience: `https://tuyetnghi96.auth0.com/userinfo`,
+       //     responseType: 'code',
+       //     scope: 'openid profile'
+       //   });
+       //
+       //  $('#sso-login').click(function(e) {
+       //     e.preventDefault();
+       //     webAuth.authorize();
+       //   });
+       // });
 
-        $('#sso-login').click(function(e) {
-           e.preventDefault();
-           webAuth.authorize();
-         });
-       });
+       <?php
+       $a = 'admin';
+         if(!isset($_COOKIE['userid'])) {
+           echo 'load_ajax("http://localhost/sso/Auth/auth.php?next=http://localhost/sso/SampleCart/","'.$a.'","FWy8Q20551Yn4xOrb93FIrexpINmLpLx","addsession.php");';
+         }
+       ?>
      </script>
   </head>
   <body>
