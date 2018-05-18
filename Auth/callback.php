@@ -13,15 +13,16 @@ if (!$userInfo) {
 else {
     $user = $userInfo['nickname'];
     $sql_select_user = "SELECT * FROM auth WHERE user = '$user'";
-    $exe_qry_user = mysqli_query($conn,$sql);
+    $exe_qry_user = mysqli_query($conn,$sql_select_user);
     if(mysqli_num_rows($exe_qry) > 0) {
       $sql_upd_token = "UPDATE auth SET token = '$token' WHERE user = '$user'";
+    } else {
+      $sql_upd_token = "INSERT INTO auth(user,token) VALUES ('$user','$token')";
     }
-    // $cookie_name = "userid";
-    // $cookie_value = $userInfo['nickname'];
-    // setcookie($cookie_name, $cookie_value, time() + 3600);
-    // // var_dump($_COOKIE[$cookie_name]);
-    // echo '<script>alert("Đăng nhập thành công!")</script>';
-    // echo '<meta http-equiv="refresh" content="0,url=index.php">';
-    var_dump($_SESSION);
+
+    if($sql_upd_token) {
+      mysqli_query($conn,$sql_upd_token);
+    }
+
+    echo '<meta http-equiv="refresh" content="0,url=auth.php">';
 }

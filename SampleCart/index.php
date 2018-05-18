@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['user'])) {
+  if(isset($_COOKIE['userid'])) {
+    echo '<meta http-equiv="refresh" content="0,url=addsession.php">';
+  }
+}
+
 ?>
 <html>
   <head>
@@ -12,9 +19,6 @@ session_start();
     <!-- Single Sign-on -->
     <script src="http://localhost/sso/Auth/main.js"></script>
 
-    <!-- Auth0 -->
-    <!-- <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script> -->
-
     <!-- Initializing Script -->
     <script>
        // Hàm thiết lập Cookie
@@ -24,26 +28,12 @@ session_start();
          var expires = "expires="+d.toUTCString();
          document.cookie = cname + "=" + cvalue + "; " + expires;
        }
-       // $(document).ready(function() {
-       //  var webAuth = new auth0.WebAuth({
-       //     domain: 'tuyetnghi96.auth0.com',
-       //     clientID: 'FWy8Q20551Yn4xOrb93FIrexpINmLpLx',
-       //     redirectUri: 'http://localhost/sso/SampleCart/callback.php',
-       //     audience: `https://tuyetnghi96.auth0.com/userinfo`,
-       //     responseType: 'code',
-       //     scope: 'openid profile'
-       //   });
-       //
-       //  $('#sso-login').click(function(e) {
-       //     e.preventDefault();
-       //     webAuth.authorize();
-       //   });
-       // });
 
        <?php
-       $a = 'admin';
-         if(!isset($_COOKIE['userid'])) {
-           echo 'load_ajax("http://localhost/sso/Auth/auth.php?next=http://localhost/sso/SampleCart/","'.$a.'","FWy8Q20551Yn4xOrb93FIrexpINmLpLx","addsession.php");';
+         if(!isset($_COOKIE['user'])) {
+           echo '$(document).ready(function() {
+             load_ajax("http://localhost/sso/Auth/auth.php?next=http://localhost/sso/SampleCart/","nguyenminhvy987","FWy8Q20551Yn4xOrb93FIrexpINmLpLx","addsession.php");
+           });';
          }
        ?>
      </script>

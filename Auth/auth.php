@@ -19,7 +19,7 @@ if(isset($_POST['user']) && isset($_POST['token'])) {
   if(mysqli_num_rows($exe_qry) > 0) {
     while ($row = mysqli_fetch_array($exe_qry)) {
       if($row['token'] == NULL) {
-        // ...
+        echo '<meta http-equiv="refresh" content="0,url=login.php">';
       } else {
         $data['CODE'] = 200;
         $data['MESSAGE'] = TRUE;
@@ -28,23 +28,9 @@ if(isset($_POST['user']) && isset($_POST['token'])) {
       }
     }
   }
-
-  foreach ($dbtkb as $mon){
-  	if ($tenmon==$mon['TEN_MON']){
-  		echo json_encode($mon);
-  	}
-  }
 } else {
   echo '<p>Directory access is forbidden.</p>';
 }
-$tenmon = $_POST['tenmon'];
-
-foreach ($dbtkb as $mon){
-	if ($tenmon==$mon['TEN_MON']){
-		echo json_encode($mon);
-	}
-}
-
 // echo '<a href="'.$_GET['next'].'" target="_blank">'.$_GET['next'].'</a>';
 //
 // if(isset($_SESSION['user_auth'])) {

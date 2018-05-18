@@ -14,7 +14,7 @@ function load_ajax(url,userid,token_value,execute){
 			var USER = kq.TOKEN_RESULT;
       if(MESSAGE === TRUE) {
         setCookie('userid',USER,30); // set cookie on 30 days
-        $.html('<meta http-equiv="refresh" content="0,url=' + execute + '.php">');
+        $.html('<meta http-equiv="refresh" content="0,url='+ execute + '.php">')
       }
     	  setCookie('userid',USER,-30);
     }
