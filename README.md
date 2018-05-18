@@ -19,6 +19,13 @@ An experimental project for the single sign-on feature (SSO) using Auth0.
 * Support of Project CT263: Mr. Quach Hoang Thanh
 * Platform: Auth0
 
+# Solution
+* Access to Sample Cart (as app1) or CT263 (as app2)
+* Get cookie with value of user (array type) in app1/app2
+* Push AJAX with value cookie from app1/app2 to Auth App
+* In Auth App, if isset value of cookie and token of this value, return TRUE
+* In app1/app2, if TRUE set new cookie of user by cookie, if FALSE unset cookie 
+
 # References
 * Auth0: https://auth0.com/docs
 
