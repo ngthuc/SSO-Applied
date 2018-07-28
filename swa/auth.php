@@ -1,4 +1,7 @@
 <?php
+  session_start();
+
+  // Require composer autoloader
   require __DIR__ . '/vendor/autoload.php';
 
   use Auth0\SDK\Auth0;
@@ -9,12 +12,25 @@
     'client_secret' => 'wMmawuSq2b_scPCBBIhOUsJYThRZzKGqITr_J4WPvYG4Cgznacaef1ETl1mkIKCQ',
     'redirect_uri' => 'http://localhost/sso/swa/auth.php',
     'audience' => 'https://ngthuc.auth0.com/userinfo',
-    'responseType' => 'code',
-    'scope' => 'openid email profile',
     'persist_id_token' => true,
     'persist_access_token' => true,
     'persist_refresh_token' => true,
-    'prompt' => none,
   ]);
 
-  $auth0->login();
+  $userInfo = $auth0->getUser();
+
+
+  if (!$userInfo) {
+      // We have no user info
+      // redirect to Login
+      $loginTo = 'http://localhost/sso/swa/login.php';
+      header('Location: ' . $loginTo);
+  } else {
+      // User is authenticated
+      // Say hello to $userInfo['name']
+      // print logout button
+      $_SESSION['userinfo'] = $userInfo;
+
+      echo '<body onload="window.history.go(-3);"></body>';
+  }
+?>

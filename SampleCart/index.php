@@ -1,11 +1,33 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['user'])) {
-  if(isset($_COOKIE['userid'])) {
-    echo '<meta http-equiv="refresh" content="0,url=addsession.php">';
-  }
+// Require composer autoloader
+require __DIR__ . '/vendor/autoload.php';
+
+use Auth0\SDK\Auth0;
+
+$auth0 = new Auth0([
+  'domain' => 'ngthuc.auth0.com',
+  'client_id' => 'rYuzanR_2s25Wpy6wXqgnJvgHLy-njY0',
+  'client_secret' => 'wMmawuSq2b_scPCBBIhOUsJYThRZzKGqITr_J4WPvYG4Cgznacaef1ETl1mkIKCQ',
+  'redirect_uri' => 'http://localhost/sso/swa/auth.php',
+  'audience' => 'https://ngthuc.auth0.com/userinfo',
+  'persist_id_token' => true,
+  'persist_access_token' => true,
+  'persist_refresh_token' => true,
+]);
+
+$userInfo = $auth0->getUser();
+
+if ($userInfo) {
+  $_SESSION['userSSO'] = $userInfo;
 }
+
+// if(!isset($_SESSION['user'])) {
+//   if(isset($_COOKIE['userid'])) {
+//     echo '<meta http-equiv="refresh" content="0,url=addsession.php">';
+//   }
+// }
 
 ?>
 <html>
@@ -17,10 +39,10 @@ if(!isset($_SESSION['user'])) {
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!-- Single Sign-on -->
-    <script src="http://localhost/sso/Auth/main.js"></script>
+    <!-- <script src="http://localhost/sso/Auth/main.js"></script> -->
 
     <!-- Initializing Script -->
-    <script>
+    <!-- <script>
        // Hàm thiết lập Cookie
        function setCookie(cname, cvalue, exdays) {
          var d = new Date();
@@ -30,20 +52,23 @@ if(!isset($_SESSION['user'])) {
        }
 
        <?php
-         if(!isset($_COOKIE['user'])) {
-           echo '$(document).ready(function() {
-             load_ajax("http://localhost/sso/Auth/auth.php?next=http://localhost/sso/SampleCart/","nguyenminhvy987","FWy8Q20551Yn4xOrb93FIrexpINmLpLx","addsession.php");
-           });';
-         }
+         // if(!isset($_COOKIE['user'])) {
+         //   echo '$(document).ready(function() {
+         //     load_ajax("http://localhost/sso/Auth/auth.php?next=http://localhost/sso/SampleCart/","nguyenminhvy987","FWy8Q20551Yn4xOrb93FIrexpINmLpLx","addsession.php");
+         //   });';
+         // }
        ?>
-     </script>
+     </script> -->
   </head>
   <body>
   <center>
     <h1>Demo Shopping Cart</h1>
     <div id='cart'>
       <?php
-        if(isset($_SESSION['user'])) {
+        if(isset($_SESSION['userSSO'])) {
+          echo 'Xin chào, <b style="color: red">' . $_SESSION['userSSO']['name'] . '!</b>';
+          echo '<a href="http://localhost/sso/swa/logout.php?return=http://localhost/sso/SampleCart" style="color: blue"> Đăng xuất</a>';
+        } else if(isset($_SESSION['user'])) {
           echo 'Xin chào, <b style="color: red">' . $_SESSION['user'] . '!</b>';
           echo '<a href="logout.php" style="color: blue"> Đăng xuất</a>';
         } else {
@@ -66,7 +91,7 @@ if(!isset($_SESSION['user'])) {
             </table>
           </form>
           <hr>
-          <button id="sso-login" style="background-color: red; color: white; width: 100%">Đăng nhập với Auth0</button>
+          <a href="http://localhost/sso/swa/auth.php?return=http://localhost/sso/SampleCart" id="sso-login" style="background-color: red; color: white; width: 100%">Đăng nhập với Auth0</a>
           </center>';
         }
       ?>
