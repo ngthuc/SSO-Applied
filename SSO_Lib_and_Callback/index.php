@@ -21,10 +21,10 @@
     <script>
         $(document).ready(function() {
          var webAuth = new auth0.WebAuth({
-            domain: 'tuyetnghi96.auth0.com',
-            clientID: '7Hr6oFjh6XJa4nkesvi3sbXclnXkIKjd',
+            domain: 'ngthuc.auth0.com',
+            clientID: 'rYuzanR_2s25Wpy6wXqgnJvgHLy-njY0',
             redirectUri: 'http://localhost/sso/SSO_Lib_and_Callback/callback.php',
-            audience: `https://tuyetnghi96.auth0.com/userinfo`,
+            audience: `https://ngthuc.auth0.com/userinfo`,
             responseType: 'code',
             scope: 'openid profile'
           });
