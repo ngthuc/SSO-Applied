@@ -3,6 +3,9 @@
 ?>
 <html>
     <head>
+
+        <title> Single Sign-On Web App | SWA </title>
+
         <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
