@@ -14,7 +14,7 @@ $auth0 = new Auth0([
 ]);
 
 $auth0->logout();
-session_unset();
+session_destroy();
 if(isset($_GET['return'])) {
   $return_to = $_GET['return'];
 } else {

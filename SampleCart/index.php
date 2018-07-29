@@ -20,7 +20,8 @@ $auth0 = new Auth0([
 $userInfo = $auth0->getUser();
 
 if ($userInfo) {
-  $_SESSION['userSSO'] = $userInfo;
+  $_SESSION['user'] = $userInfo['name'];
+  $_SESSION['type'] = 'SSO';
 }
 
 // if(!isset($_SESSION['user'])) {
@@ -65,10 +66,7 @@ if ($userInfo) {
     <h1>Demo Shopping Cart</h1>
     <div id='cart'>
       <?php
-        if(isset($_SESSION['userSSO'])) {
-          echo 'Xin chào, <b style="color: red">' . $_SESSION['userSSO']['name'] . '!</b>';
-          echo '<a href="http://localhost/sso/swa/logout.php?return=http://localhost/sso/SampleCart" style="color: blue"> Đăng xuất</a>';
-        } else if(isset($_SESSION['user'])) {
+        if(isset($_SESSION['user'])) {
           echo 'Xin chào, <b style="color: red">' . $_SESSION['user'] . '!</b>';
           echo '<a href="logout.php" style="color: blue"> Đăng xuất</a>';
         } else {
@@ -91,7 +89,7 @@ if ($userInfo) {
             </table>
           </form>
           <hr>
-          <a href="http://localhost/sso/swa/auth.php?return=http://localhost/sso/SampleCart" id="sso-login" style="background-color: red; color: white; width: 100%">Đăng nhập với Auth0</a>
+          <button onclick="location.href'."='http://localhost/sso/swa/auth.php/';".'" id="sso-login" style="background-color: red; color: white; width: 100%">Đăng nhập với Auth0</button>
           </center>';
         }
       ?>

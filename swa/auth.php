@@ -30,7 +30,7 @@
       // Say hello to $userInfo['name']
       // print logout button
       $_SESSION['userinfo'] = $userInfo;
-
+      // var_dump($_SESSION);
       echo '<body onload="window.history.go(-3);"></body>';
   }
 ?>

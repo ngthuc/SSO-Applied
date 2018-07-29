@@ -36,9 +36,9 @@
               <?php else: ?>
               <div class="logged-in-box auth0-box logged-in">
                 <h1 id="logo"><img src="https://c1.staticflickr.com/1/851/29824109178_e5d5395989_o.png" /></h1>
-                <img class="avatar" src="<?php echo $_SESSION['userinfo']['picture'] ?>" width="100px"/>
-                <h2>Welcome <span class="nickname"><?php echo $_SESSION['userinfo']['name'] ?></span></h2>
-                <h3>Email: <span class="nickname"><?php echo $_SESSION['userinfo']['email'] ?></span></h3>
+                <img class="avatar" src="<?php echo $_SESSION['userinfo']['picture'] ?>" style="width:200px; border-radius:20px" />
+                <h3>Hello, <span class="nickname"><?php echo $_SESSION['userinfo']['name'] ?></span>!</h3>
+                <h4>Email: <span class="nickname"><?php echo $_SESSION['userinfo']['email'] ?></span></h4>
                 <a id="qsLogoutBtn" class="btn btn-warning btn-logout" href="logout.php">Logout</a>
               </div>
               <?php endif ?>

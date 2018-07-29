@@ -24,6 +24,7 @@ echo '<meta http-equiv="refresh" content="3,url=index.php">';
         echo "<br />";
         echo "Ma so don hang la <b>".$_SESSION['invoice']."</b>";
         echo "</div>";
+        unset($_SESSION['cart']);
       ?>
       <a href="index.php">Cho trong 3s hoac click de quay ve trang chu</a>
     </center>
