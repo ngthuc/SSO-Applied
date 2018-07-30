@@ -27,15 +27,15 @@ An experimental project for the single sign-on feature (SSO) using Auth0.
 * In app1/app2, if TRUE set new cookie of user by cookie, if FALSE unset cookie
 
 # Demo
-* Before login
+## Before login
 ![alt text](https://github.com/ngthuc/SSO-Applied/blob/master/demo%20pictures/1_Auth%20login%20site.png?raw=true)
-* Login with Auth0
+## Login with Auth0
 ![alt text](https://github.com/ngthuc/SSO-Applied/blob/master/demo%20pictures/2_Auth0%20login%20site.png?raw=true)
-* After login
+## After login
 ![alt text](https://github.com/ngthuc/SSO-Applied/blob/master/demo%20pictures/3_Auth%20main%20site.png?raw=true)
-* Authentication on SampleCart
+## Authentication on SampleCart
 ![alt text](https://github.com/ngthuc/SSO-Applied/blob/master/demo%20pictures/4_SampleCart%20main%20site%20logged%20in.png?raw=true)
-* After logout on SampleCart
+## After logout on SampleCart
 ![alt text](https://github.com/ngthuc/SSO-Applied/blob/master/demo%20pictures/5_SampleCart%20main%20site.png?raw=true)
 
 # References
